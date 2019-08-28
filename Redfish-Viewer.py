@@ -12,12 +12,10 @@ import sys
 print("Redfish Viewer for Gigabyte/AMI systems")
 print("Python 2 is required [2019-08-26]")
 userIP = raw_input ("Please enter the IP address AMI BMC: ")
-#textb = str(texta)
 print("You have entered IP: " + userIP)
 userName = raw_input ("Please enter the Username: [by default Administrator] ")
-#textf_user = str(text_user)
 userPassword = raw_input ("Please enter the Password: [by default superuser] ")
-#passwordf_user = str(password_user)
+
 print(" ")
 
 sys = requests.get('https://%s/redfish/v1/Systems/Self' % (userIP),verify=False,auth=(userName,userPassword))
